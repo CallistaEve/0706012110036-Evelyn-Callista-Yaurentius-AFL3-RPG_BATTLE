@@ -16,6 +16,8 @@
 		0410DB3A29F0BFEC006775B0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410DB3929F0BFEC006775B0 /* Player.swift */; };
 		0410DB3C29F0C014006775B0 /* PlayerSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410DB3B29F0C014006775B0 /* PlayerSkill.swift */; };
 		0410DB3E29F0C029006775B0 /* PlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410DB3D29F0C029006775B0 /* PlayerItem.swift */; };
+		04138B6929F10A8D002D8D26 /* PlayerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04138B6829F10A8D002D8D26 /* PlayerMenuView.swift */; };
+		04138B6B29F10AC4002D8D26 /* PlayerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04138B6A29F10AC4002D8D26 /* PlayerMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		0410DB3929F0BFEC006775B0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		0410DB3B29F0C014006775B0 /* PlayerSkill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSkill.swift; sourceTree = "<group>"; };
 		0410DB3D29F0C029006775B0 /* PlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerItem.swift; sourceTree = "<group>"; };
+		04138B6829F10A8D002D8D26 /* PlayerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenuView.swift; sourceTree = "<group>"; };
+		04138B6A29F10AC4002D8D26 /* PlayerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				0410DB3B29F0C014006775B0 /* PlayerSkill.swift */,
 				0410DB3D29F0C029006775B0 /* PlayerItem.swift */,
 				0410DB3729F0BFD8006775B0 /* Enemy.swift */,
+				04138B6A29F10AC4002D8D26 /* PlayerMenu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,8 +97,9 @@
 		0410DB3F29F0C042006775B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0410DB2829F0BC46006775B0 /* ContentView.swift */,
 				0410DB3429F0BDD3006775B0 /* MainView.swift */,
+				0410DB2829F0BC46006775B0 /* ContentView.swift */,
+				04138B6829F10A8D002D8D26 /* PlayerMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 				0410DB2929F0BC46006775B0 /* ContentView.swift in Sources */,
 				0410DB3529F0BDD3006775B0 /* MainView.swift in Sources */,
 				0410DB3E29F0C029006775B0 /* PlayerItem.swift in Sources */,
+				04138B6929F10A8D002D8D26 /* PlayerMenuView.swift in Sources */,
+				04138B6B29F10AC4002D8D26 /* PlayerMenu.swift in Sources */,
 				0410DB3A29F0BFEC006775B0 /* Player.swift in Sources */,
 				0410DB2729F0BC46006775B0 /* _706012110036_Evelyn_Callista_Yaurentius_AFL3_RPG_BATTLEApp.swift in Sources */,
 			);
