@@ -17,6 +17,9 @@
 		0410DB3C29F0C014006775B0 /* PlayerSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410DB3B29F0C014006775B0 /* PlayerSkill.swift */; };
 		0410DB3E29F0C029006775B0 /* PlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410DB3D29F0C029006775B0 /* PlayerItem.swift */; };
 		04138B6B29F10AC4002D8D26 /* PlayerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04138B6A29F10AC4002D8D26 /* PlayerMenu.swift */; };
+		044F9AED29F24B0C007496C3 /* BattleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F9AEC29F24B0C007496C3 /* BattleSystem.swift */; };
+		044F9AEF29F25490007496C3 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F9AEE29F25490007496C3 /* MainMenuView.swift */; };
+		044F9AF129F26069007496C3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F9AF029F26069007496C3 /* Data.swift */; };
 		04DB3CC529F12B410064ACE5 /* SpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB3CC429F12B410064ACE5 /* SpriteView.swift */; };
 		04DB3CC729F13E430064ACE5 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB3CC629F13E430064ACE5 /* BattleView.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +36,9 @@
 		0410DB3B29F0C014006775B0 /* PlayerSkill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSkill.swift; sourceTree = "<group>"; };
 		0410DB3D29F0C029006775B0 /* PlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerItem.swift; sourceTree = "<group>"; };
 		04138B6A29F10AC4002D8D26 /* PlayerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMenu.swift; sourceTree = "<group>"; };
+		044F9AEC29F24B0C007496C3 /* BattleSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSystem.swift; sourceTree = "<group>"; };
+		044F9AEE29F25490007496C3 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		044F9AF029F26069007496C3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		04DB3CC429F12B410064ACE5 /* SpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteView.swift; sourceTree = "<group>"; };
 		04DB3CC629F13E430064ACE5 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +98,7 @@
 				0410DB3D29F0C029006775B0 /* PlayerItem.swift */,
 				0410DB3729F0BFD8006775B0 /* Enemy.swift */,
 				04138B6A29F10AC4002D8D26 /* PlayerMenu.swift */,
+				044F9AF029F26069007496C3 /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,9 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				0410DB3429F0BDD3006775B0 /* MainView.swift */,
+				044F9AEE29F25490007496C3 /* MainMenuView.swift */,
 				04DB3CC429F12B410064ACE5 /* SpriteView.swift */,
 				0410DB2829F0BC46006775B0 /* ContentView.swift */,
 				04DB3CC629F13E430064ACE5 /* BattleView.swift */,
+				044F9AEC29F24B0C007496C3 /* BattleSystem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,9 +189,12 @@
 				0410DB3C29F0C014006775B0 /* PlayerSkill.swift in Sources */,
 				04DB3CC529F12B410064ACE5 /* SpriteView.swift in Sources */,
 				04DB3CC729F13E430064ACE5 /* BattleView.swift in Sources */,
+				044F9AED29F24B0C007496C3 /* BattleSystem.swift in Sources */,
 				0410DB3829F0BFD8006775B0 /* Enemy.swift in Sources */,
 				0410DB2929F0BC46006775B0 /* ContentView.swift in Sources */,
+				044F9AEF29F25490007496C3 /* MainMenuView.swift in Sources */,
 				0410DB3529F0BDD3006775B0 /* MainView.swift in Sources */,
+				044F9AF129F26069007496C3 /* Data.swift in Sources */,
 				0410DB3E29F0C029006775B0 /* PlayerItem.swift in Sources */,
 				04138B6B29F10AC4002D8D26 /* PlayerMenu.swift in Sources */,
 				0410DB3A29F0BFEC006775B0 /* Player.swift in Sources */,

@@ -8,27 +8,31 @@
 import SwiftUI
 
 struct MainView: View {
+    //    var player: Player
     //    @State private var txtValue: String = ""
     @State private var answer: String = ""
     @State private var start: Bool = true
     @State private var next: Bool = false
     @State private var next2: Bool = false
     @State private var playerMenu = [1, 2, 3]
+//    public var player = Player(name: "")
+//    public var playerMoney = player.money
+    
     var body: some View {
         VStack(alignment: .leading){
-            HStack(alignment: .top){
-                if start == true{
-                    Image("Wizard")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 160, height: 155)
-                        .cornerRadius(5)
-                }
-                else if next == true{
-                    BattleView(player: Player.init("player"))
-                }
-            }
-            .padding()
+            //            HStack(alignment: .top){
+            //                if start == true{
+            //                    Image("Wizard")
+            //                        .renderingMode(.original)
+            //                        .resizable()
+            //                        .frame(width: 160, height: 155)
+            //                        .cornerRadius(5)
+            //                }
+            //                else if next == true{
+            //                    BattleView()
+            //                }
+            //            }
+            //            .padding()
             ScrollView{
                 VStack{
                     Text("Welcome to the world of magic!\nYou have been chosen to embark on an epic journey as a young wizard on the path to becoming a master of the arcane arts. Your adventures will take you through forests, mountains, and dungeons, where you will face challenges, make allies, and fight enemies.\nPress [Next] to continue:")
@@ -71,7 +75,7 @@ struct MainView: View {
                             let convertInput = String(answer)
                             answer = String(convertInput)
                             next2 = true
-                            var player = Player(answer)
+                            
                         }){
                             Text("Confirm")
                                 .padding(5)
@@ -83,8 +87,24 @@ struct MainView: View {
                         .cornerRadius(8)
                         .shadow(color: Color.black, radius: 3)
                         if next2 == true{
-                            Text("Nice to meet you \(answer)!")
-                            Text("From here, you can...\n[C]heck your health and stats\n[H]eal or Restore Your Wounds with Items\n[B]uy Items\n\n...or choose where you want to go\n\n[F]orest of Troll\n[M]ountain of Golem\n[Q]uit game\n\nYour choice?")
+                            var player = Player(name: answer)
+                            Text("Nice to meet you \(player.playerName)!")
+                            
+                            Text("From here, you can...")
+                            VStack(alignment: .leading){
+                                Button {
+                                    print("Button pressed")
+                                } label: {
+                                    NavigationLink(destination: MainMenuView(player: Player(name: player.playerName))) {
+                                        Text("Start the Adventure")
+                                            .padding(12)
+                                            .background(Color.green)
+                                            .foregroundColor(Color.white)
+                                            .cornerRadius(8)
+                                    }
+                                }
+                                
+                            }
                         }
                     }
                 }
@@ -94,6 +114,7 @@ struct MainView: View {
         .padding()
     }
 }
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

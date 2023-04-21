@@ -6,17 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
+import CoreLocation
 
-struct Player{
-    var name: String
-    var hp: Int
-    var mp: Int
-    var money: Int
+class Player{
+    public var playerName: String
+    public var playerHp: Int
+    public var mp: Int
+    public var money: Int
 //    var playerSkill : [playerSkill] = [physicalAttack, meteor, shield, run]
-    init(_ name:String){
-        self.name = name
-        hp = 100
+    init(name:String){
+        self.playerName = name
+        playerHp = 100
         mp = 50
         money = 0
     }
+//    func addMoney(){
+//        money += 10
+//    }
 }
