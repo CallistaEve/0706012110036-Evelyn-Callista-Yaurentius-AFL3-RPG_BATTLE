@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     //    var player: Player
     //    @State private var txtValue: String = ""
+    
     @State private var answer: String = ""
     @State private var start: Bool = true
     @State private var next: Bool = false
@@ -88,14 +89,14 @@ struct MainView: View {
                         .shadow(color: Color.black, radius: 3)
                         if next2 == true{
                             var player = Player(name: answer)
-                            Text("Nice to meet you \(player.playerName)!")
+                            Text("Nice to meet you \(answer)!")
                             
                             Text("From here, you can...")
                             VStack(alignment: .leading){
                                 Button {
-                                    print("Button pressed")
+//                                    var player = Player(name: answer)
                                 } label: {
-                                    NavigationLink(destination: MainMenuView(player: Player(name: player.playerName))) {
+                                    NavigationLink(destination: MainMenuView(playerName: player)) {
                                         Text("Start the Adventure")
                                             .padding(12)
                                             .background(Color.green)

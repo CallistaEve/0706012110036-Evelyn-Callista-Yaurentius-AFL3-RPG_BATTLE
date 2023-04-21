@@ -6,3 +6,19 @@
 //
 
 import Foundation
+import SwiftUI
+import CoreLocation
+
+struct playerSkill{
+    var name: String
+    var description: String
+    var mp: Int
+    var damage: Int
+    
+    init(name:String, mp:Int , damage:Int, description:String){
+        self.name = name
+        self.mp = mp
+        self.damage = damage
+        self.description = description
+    }
+}

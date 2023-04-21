@@ -26,6 +26,7 @@ struct SampleStyle: ButtonStyle {
 
 struct ContentView: View {
     var body: some View {
+        
         NavigationView {
             VStack {
                 Image(systemName: "globe")
