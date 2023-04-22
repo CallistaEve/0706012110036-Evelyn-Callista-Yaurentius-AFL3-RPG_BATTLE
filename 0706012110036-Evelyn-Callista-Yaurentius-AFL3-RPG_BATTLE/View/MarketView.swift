@@ -8,13 +8,73 @@
 import SwiftUI
 
 struct MarketView: View {
+    @Binding var player : Player
+    @Binding var playerPotion : PlayerItem
+    @Binding var playerElixir : PlayerItem
+    @Environment(\.presentationMode)private var presentationMode: Binding<PresentationMode>
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading){
+            Text("Welcome to the Market!\nWhich items do you want to buy?\n\n[P]otions 1x 5$\n[E]lixir 1x 5$\n[L]eave")
+            Text("Player Money : \(player.money)")
+            Text("Player Potions : \(playerPotion.quantity)")
+            Text("Player Elixir : \(playerElixir.quantity)")
+            Button {
+                if player.money >= 5{
+                    playerPotion.quantity += 1
+                    player.money -= 5
+                }
+            } label: {
+                if player.money > 0{
+                    Text("Buy Potion")
+                        .padding(12)
+                        .background(Color.green)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(8)
+                }else if player.money <= 0{
+                    Text("You don't have enough money to buy Potion")
+                        .padding(12)
+                        .background(Color.red)
+                        .foregroundColor(Color.black)
+                        .cornerRadius(8)
+                        .disabled(true)
+                }
+            }
+            Button {
+                if player.money >= 5{
+                    playerElixir.quantity += 1
+                    player.money -= 5
+                }
+            } label: {
+                if player.money >= 5{
+                    Text("Buy Elixir")
+                        .padding(12)
+                        .background(Color.green)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(8)
+                }else if player.money <= 0{
+                    Text("You don't have enough money to buy Elixir")
+                        .padding(12)
+                        .background(Color.red)
+                        .foregroundColor(Color.black)
+                        .cornerRadius(8)
+                        .disabled(true)
+                }
+            }
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Text("Leave")
+                    .padding(12)
+                    .background(Color.red)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(8)
+            })
+        }
     }
 }
 
-struct MarketView_Previews: PreviewProvider {
-    static var previews: some View {
-        MarketView()
-    }
-}
+//struct MarketView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MarketView()
+//    }
+//}

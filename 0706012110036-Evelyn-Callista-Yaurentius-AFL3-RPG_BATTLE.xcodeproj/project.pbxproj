@@ -20,8 +20,10 @@
 		041C61B029F2A84B00EBAE89 /* CheckStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C61AF29F2A84B00EBAE89 /* CheckStatusView.swift */; };
 		044F9AEF29F25490007496C3 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F9AEE29F25490007496C3 /* MainMenuView.swift */; };
 		044F9AF129F26069007496C3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F9AF029F26069007496C3 /* Data.swift */; };
+		0466902F29F3B3A100B2E816 /* EnemyDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466902E29F3B3A100B2E816 /* EnemyDataService.swift */; };
 		04CC3A9329F2DBE4001E7A9B /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC3A9229F2DBE4001E7A9B /* MarketView.swift */; };
 		04DB3CC729F13E430064ACE5 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DB3CC629F13E430064ACE5 /* BattleView.swift */; };
+		04E8028129F3F8D600C79109 /* UseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8028029F3F8D600C79109 /* UseItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +41,10 @@
 		041C61AF29F2A84B00EBAE89 /* CheckStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusView.swift; sourceTree = "<group>"; };
 		044F9AEE29F25490007496C3 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		044F9AF029F26069007496C3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		0466902E29F3B3A100B2E816 /* EnemyDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyDataService.swift; sourceTree = "<group>"; };
 		04CC3A9229F2DBE4001E7A9B /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
 		04DB3CC629F13E430064ACE5 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
+		04E8028029F3F8D600C79109 /* UseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		0410DB2529F0BC46006775B0 /* 0706012110036-Evelyn-Callista-Yaurentius-AFL3-RPG_BATTLE */ = {
 			isa = PBXGroup;
 			children = (
+				0466902D29F3B38300B2E816 /* DataServices */,
 				0410DB2629F0BC46006775B0 /* _706012110036_Evelyn_Callista_Yaurentius_AFL3_RPG_BATTLEApp.swift */,
 				0410DB3F29F0C042006775B0 /* View */,
 				0410DB3629F0BF7A006775B0 /* Model */,
@@ -112,8 +117,17 @@
 				041C61AF29F2A84B00EBAE89 /* CheckStatusView.swift */,
 				0410DB2829F0BC46006775B0 /* ContentView.swift */,
 				04DB3CC629F13E430064ACE5 /* BattleView.swift */,
+				04E8028029F3F8D600C79109 /* UseItemView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0466902D29F3B38300B2E816 /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				0466902E29F3B3A100B2E816 /* EnemyDataService.swift */,
+			);
+			path = DataServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +202,7 @@
 			files = (
 				0410DB3C29F0C014006775B0 /* PlayerSkill.swift in Sources */,
 				04DB3CC729F13E430064ACE5 /* BattleView.swift in Sources */,
+				04E8028129F3F8D600C79109 /* UseItemView.swift in Sources */,
 				0410DB3829F0BFD8006775B0 /* Enemy.swift in Sources */,
 				0410DB2929F0BC46006775B0 /* ContentView.swift in Sources */,
 				044F9AEF29F25490007496C3 /* MainMenuView.swift in Sources */,
@@ -198,6 +213,7 @@
 				0410DB3E29F0C029006775B0 /* PlayerItem.swift in Sources */,
 				04138B6B29F10AC4002D8D26 /* PlayerMenu.swift in Sources */,
 				0410DB3A29F0BFEC006775B0 /* Player.swift in Sources */,
+				0466902F29F3B3A100B2E816 /* EnemyDataService.swift in Sources */,
 				0410DB2729F0BC46006775B0 /* _706012110036_Evelyn_Callista_Yaurentius_AFL3_RPG_BATTLEApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

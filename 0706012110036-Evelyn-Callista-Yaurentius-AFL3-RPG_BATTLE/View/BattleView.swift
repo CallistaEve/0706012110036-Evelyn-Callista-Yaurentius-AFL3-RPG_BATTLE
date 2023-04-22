@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct BattleView: View {
-    @State var player : Player
+    @Binding var player : Player
+    @Binding var playerPotion : PlayerItem
+    @Binding var playerElixir : PlayerItem
     @State var choosenEnemy : Enemy
-    //    var enemy : Enemy
-//    @State private var golem = Enemy(name : "Golem", hp : 15, damage : 10, prize : 50, encounterText: "As you make your way through the rugged mountain terrain, you can feel the chill of the wind biting at your skin. \nSuddenly, you hear a sound that makes you freeze in your tracks. That's when you see it - a massive, snarling Golem emerging from the shadows.")
-//    @State private var troll = Enemy(name : "Troll", hp : 100, damage : 5, prize :20, encounterText :"As you enter the forest, you feel a sense of unease wash over you. \nSuddenly, you hear the sound of twigs snapping behind you. You quickly spin around, and find a Troll emerging from the shadows.")
+    @Environment(\.presentationMode)private var presentationMode: Binding<PresentationMode>
     @State var win = false
     var body: some View {
         
@@ -34,7 +34,7 @@ struct BattleView: View {
             }
             Spacer()
             VStack(alignment: .leading){
-                Image("Golem")
+                Image("\(choosenEnemy.imageName)")
                     .renderingMode(.original)
                     .resizable()
                     .frame(width: 160, height: 155)
@@ -52,56 +52,116 @@ struct BattleView: View {
         ScrollView{
             
             VStack(alignment: .leading){
-                Text("From here, you can...")
                 if win == true{
                     Text("Congratz you got $\(choosenEnemy.prize) money")
-//                    player.addMoney()
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("Back")
+                            .padding(12)
+                            .background(Color.yellow)
+                            .foregroundColor(Color.black)
+                            .cornerRadius(8)
+                    })
                 }
-                Button {
-                    choosenEnemy.hp -= 10
-                    player.playerHp -= 10
-                    if choosenEnemy.hp == 0{
-                        win = true
-                        player.money += choosenEnemy.prize
-                    }
-                } label: {
-                    if win == false{
-                        Text("Attack")
+                else{
+                    Text("\(choosenEnemy.encounterText)")
+                    Button {
+                        choosenEnemy.hp -= 10
+                        player.playerHp -= 10
+                        if choosenEnemy.hp == 0{
+                            win = true
+                            player.money += choosenEnemy.prize
+                        }
+                    } label: {
+                        Text("Physical Attack")
                             .padding(12)
                             .background(Color.green)
                             .foregroundColor(Color.white)
                             .cornerRadius(8)
                     }
-                    else{
-//                        Text("Congratz you got $\(golem.prize) money")
-                        Button {
-                            
-                        } label: {
-                            
-                            NavigationLink(destination: MainMenuView(playerName: Player(name: player.playerName)))
-                            {
-                                Text("Back to Main menu")
-                                    .padding(12)
-                                    .background(Color.green)
-                                    .foregroundColor(Color.white)
-                                    .cornerRadius(8)
+                    Button {
+                        if player.mp >= 15{
+                            choosenEnemy.hp -= 50
+                            player.playerHp -= 10
+                            player.mp -= 15
+                            if choosenEnemy.hp == 0{
+                                win = true
+                                player.money += choosenEnemy.prize
                             }
-                            
+                        }
+                    } label: {
+                        if player.mp >= 15{
+                            Text("Meteor Attack")
+                                .padding(12)
+                                .background(Color.green)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(8)
+                        }else{
+                            Text("Mana doesnt enough to cast Meteor Attack")
+                                .padding(12)
+                                .background(Color.red)
+                                .foregroundColor(Color.black)
+                                .cornerRadius(8)
+                                .disabled(true)
                         }
                     }
-                    
+                    Button {
+                        if player.mp >= 10{
+                            choosenEnemy.hp -= 0
+                            player.playerHp -= 0
+                            player.mp -= 10
+                            if choosenEnemy.hp == 0{
+                                win = true
+                                player.money += choosenEnemy.prize
+                            }
+                        }
+                    } label: {
+                        if player.mp >= 10{
+                            Text("Cast Shield")
+                                .padding(12)
+                                .background(Color.green)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(8)
+                        }else{
+                            Text("Mana doesnt enough to cast Shield")
+                                .padding(12)
+                                .background(Color.red)
+                                .foregroundColor(Color.black)
+                                .cornerRadius(8)
+                                .disabled(true)
+                        }
+                    }
+                    Button {
+                    } label: {
+                        NavigationLink(destination: UseItemView(player: $player, playerPotion: $playerPotion, playerElixir: $playerElixir)) {
+                            Text("Use Items")
+                                .padding(12)
+                                .background(Color.green)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(8)
+                        }
+                    }
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("Run")
+                            .padding(12)
+                            .background(Color.red)
+                            .foregroundColor(Color.black)
+                            .cornerRadius(8)
+                    })
                 }
-//                if golem.hp == 0{
-//
-//                }
             }
         }
     }
-    
-    struct BattleView_Previews: PreviewProvider {
-        static var previews: some View {
-            BattleView(player: Player(name: ""), choosenEnemy: Enemy(name: "", hp: 0, damage: 0, prize: 0, encounterText: ""))
-        }
-    }
-    
 }
+
+//    struct BattleView_Previews: PreviewProvider {
+//        static var previews: some View {
+////            BattleView(player: Player(name: ""), choosenEnemy: Enemy(name: "", hp: 0, damage: 0, prize: 0, encounterText: ""))
+//            BattleView(player: Bind, choosenEnemy: Enemy.init(name: "", hp: 0, damage: 0, prize: 0, encounterText: ""))
+//        }
+//    }
+
+

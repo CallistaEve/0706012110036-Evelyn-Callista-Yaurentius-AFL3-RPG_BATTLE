@@ -8,32 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
-    //    var player: Player
-    //    @State private var txtValue: String = ""
-    
     @State private var answer: String = ""
     @State private var start: Bool = true
     @State private var next: Bool = false
     @State private var next2: Bool = false
-    @State private var playerMenu = [1, 2, 3]
-//    public var player = Player(name: "")
-//    public var playerMoney = player.money
     
     var body: some View {
         VStack(alignment: .leading){
-            //            HStack(alignment: .top){
-            //                if start == true{
-            //                    Image("Wizard")
-            //                        .renderingMode(.original)
-            //                        .resizable()
-            //                        .frame(width: 160, height: 155)
-            //                        .cornerRadius(5)
-            //                }
-            //                else if next == true{
-            //                    BattleView()
-            //                }
-            //            }
-            //            .padding()
+            Image("Wizard")
+                .renderingMode(.original)
+                .resizable()
+                .frame(width: 160, height: 155)
+                .cornerRadius(5)
             ScrollView{
                 VStack{
                     Text("Welcome to the world of magic!\nYou have been chosen to embark on an epic journey as a young wizard on the path to becoming a master of the arcane arts. Your adventures will take you through forests, mountains, and dungeons, where you will face challenges, make allies, and fight enemies.\nPress [Next] to continue:")
@@ -88,20 +74,30 @@ struct MainView: View {
                         .cornerRadius(8)
                         .shadow(color: Color.black, radius: 3)
                         if next2 == true{
-                            var player = Player(name: answer)
-                            Text("Nice to meet you \(answer)!")
-                            
-                            Text("From here, you can...")
+                            let player = Player(name: answer)
+                            let potion = PlayerItem("Potion", "Restore 50pt of HP", 20)
+                            let elixir = PlayerItem("Elixir", "Restore 20pt of MP", 20)
                             VStack(alignment: .leading){
                                 Button {
-//                                    var player = Player(name: answer)
                                 } label: {
-                                    NavigationLink(destination: MainMenuView(playerName: player)) {
-                                        Text("Start the Adventure")
+                                    if answer != ""{
+                                        NavigationLink(destination: MainMenuView(playerName: player, playerPotion: potion, playerElixir: elixir)) {
+                                            Text("Start the Adventure")
+                                                .padding(12)
+                                                .background(Color.green)
+                                                .foregroundColor(Color.white)
+                                                .cornerRadius(8)
+                                                .frame(maxWidth: 300)
+                                                .bold()
+                                        }
+                                    }else{
+                                        Text("Please enter your nickname")
                                             .padding(12)
-                                            .background(Color.green)
-                                            .foregroundColor(Color.white)
+                                            .background(Color.red)
+                                            .foregroundColor(Color.black)
                                             .cornerRadius(8)
+                                            .frame(maxWidth: 300)
+                                            .bold()
                                     }
                                 }
                                 

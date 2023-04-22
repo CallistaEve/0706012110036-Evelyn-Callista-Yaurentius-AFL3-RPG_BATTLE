@@ -11,19 +11,20 @@ import CoreLocation
 
 struct Enemy{
 //    struct Enemy: Hashable, Identifiable {
-    var name: String = ""
-    var hp: Int = 0
-    var damage: Int = 0
-    var prize: Int = 0
-    var encounterText: String = ""
+    var name: String
+    var hp: Int
+    var damage: Int
+    var prize: Int
+    var encounterText: String
+    let imageName: String
     
-    init(name:String, hp:Int ,damage:Int,prize:Int, encounterText: String){
-        self.name = name
-        self.hp = hp
-        self.damage = damage
-        self.prize = prize
-        self.encounterText = encounterText
-    }
+//    init(name:String, hp:Int ,damage:Int,prize:Int, encounterText: String){
+//        self.name = name
+//        self.hp = hp
+//        self.damage = damage
+//        self.prize = prize
+//        self.encounterText = encounterText
+//    }
     
     
 //    var category: Category
