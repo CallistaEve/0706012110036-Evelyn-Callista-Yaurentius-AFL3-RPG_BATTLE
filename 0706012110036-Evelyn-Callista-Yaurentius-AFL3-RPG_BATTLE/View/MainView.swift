@@ -76,34 +76,8 @@ struct MainView: View {
                                         .cornerRadius(8)
                                         .frame(maxWidth: 300)
                                         .bold()
+                                }
                             }
-                        }
-//                        .background(Color.yellow)
-//                        .foregroundColor(Color.black)
-//                        .cornerRadius(8)
-//                        .shadow(color: Color.black, radius: 3)
-//                        if next2 == true{
-//                            let player = Player(name: answer)
-//                            let potion = PlayerItem("Potion", "Restore 50pt of HP", 20)
-//                            let elixir = PlayerItem("Elixir", "Restore 20pt of MP", 20)
-//                            VStack(alignment: .leading){
-//                                Button {
-//                                } label: {
-//                                    if answer != ""{
-//
-//                                        }
-//                                    }else{
-//                                        Text("Please enter your nickname")
-//                                            .padding(12)
-//                                            .background(Color.red)
-//                                            .foregroundColor(Color.black)
-//                                            .cornerRadius(8)
-//                                            .frame(maxWidth: 300)
-//                                            .bold()
-//                                    }
-//                                }
-                                
-//                            }
                         }
                     }
                 }

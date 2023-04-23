@@ -2,14 +2,14 @@
 //  PlayerSkill.swift
 //  0706012110036-Evelyn-Callista-Yaurentius-AFL3-RPG_BATTLE
 //
-//  Created by MacBook Pro on 20/04/23.
+//  Created by MacBook Pro on 23/04/23.
 //
 
 import Foundation
-import SwiftUI
-import CoreLocation
 
-struct playerSkill{
+import SwiftUI
+
+struct PlayerSkill{
     var name: String
     var description: String
     var mp: Int
@@ -22,14 +22,17 @@ struct playerSkill{
         self.description = description
     }
     
-    func defaultAttack(hp: Int)->Int{
+    func defaultAttack(playerHP: Int, enemyHP: Int, playerDamage: Int, enemyDamage: Int)->(playerHPLeft: Int, enemyHPLeft: Int){
+        var playerDamage = 0
         print("""
     ============= Player Turn =============
-    Player deal \(damage)pt to player
+    Player deal \(damage)pt to enemy
     
     """)
-        let hpLeft = hp - damage
-        return hpLeft
+        let enemyHPLeft = enemyHP - playerDamage
+        let playerHPLeft = playerHP - enemyDamage
+
+        return (playerHPLeft, enemyHPLeft)
     }
     
     func attack(skillName: String, playerName: String, playerMp: Int, playerDamage: Int, enemy: String, enemyHP: Int)->(hpLeft: Int, mpLeft: Int, move: Int){
@@ -91,5 +94,4 @@ struct playerSkill{
     
     """)
     }
-    
 }

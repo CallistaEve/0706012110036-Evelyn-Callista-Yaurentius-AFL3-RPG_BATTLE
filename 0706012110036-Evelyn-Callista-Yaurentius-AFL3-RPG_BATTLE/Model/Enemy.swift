@@ -7,40 +7,12 @@
 
 import Foundation
 import SwiftUI
-import CoreLocation
 
 struct Enemy{
-//    struct Enemy: Hashable, Identifiable {
     var name: String
     var hp: Int
     var damage: Int
     var prize: Int
     var encounterText: String
     let imageName: String
-    
-//    init(name:String, hp:Int ,damage:Int,prize:Int, encounterText: String){
-//        self.name = name
-//        self.hp = hp
-//        self.damage = damage
-//        self.prize = prize
-//        self.encounterText = encounterText
-//    }
-    
-    
-//    var category: Category
-//    enum Category: String, CaseIterable, Codable {
-//        case lakes = "Lakes"
-//        case rivers = "Rivers"
-//        case mountains = "Mountains"
-//    }
-    
-//    private var imageName: String
-//    var image: Image {
-//        Image(imageName)
-//    }
-    
-}
-
-class createEnemy{
-//    var golem = Enemy(name: "Golem", hp: 150, damage: 10, prize: 100, encounterText: "This is Golem", imageName: "Golem")
 }

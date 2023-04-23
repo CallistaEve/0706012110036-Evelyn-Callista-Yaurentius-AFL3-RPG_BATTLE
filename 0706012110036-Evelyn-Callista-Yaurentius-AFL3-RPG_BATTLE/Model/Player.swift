@@ -21,7 +21,4 @@ class Player{
         mp = 50
         money = 0
     }
-    func addMoney(){
-        money += 10
-    }
 }

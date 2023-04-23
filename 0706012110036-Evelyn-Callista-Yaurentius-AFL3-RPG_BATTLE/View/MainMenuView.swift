@@ -15,14 +15,13 @@ class EnemiesViewModel: ObservableObject{
     }
 }
 
+
 struct MainMenuView: View {
     @State var playerName : Player
     @State var playerPotion : PlayerItem
     @State var playerElixir : PlayerItem
     @StateObject private var vm = EnemiesViewModel()
     @State var checkStatus : Bool = false
-//    let userPotion = PlayerItem("Potion", "Restore 50pt of HP", 20)
-//    let userElixir = PlayerItem("Elixir", "Restore 20pt of MP", 20)
     var body: some View {
         VStack(alignment: .leading){
             Image("Wizard")
