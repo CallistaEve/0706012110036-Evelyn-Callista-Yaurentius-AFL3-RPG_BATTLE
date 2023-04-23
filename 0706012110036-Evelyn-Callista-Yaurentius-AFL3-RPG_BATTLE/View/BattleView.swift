@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+class PlayerSkillsViewModel: ObservableObject{
+    @Published var skills: [PlayerSkill]
+    init(){
+        let skills = PlayerSkillDataService.skills
+        self.skills = skills
+    }
+}
+
 struct BattleView: View {
     @Binding var player : Player
     @Binding var playerPotion : PlayerItem
     @Binding var playerElixir : PlayerItem
     @State var choosenEnemy : Enemy
+    @StateObject private var psm = PlayerSkillsViewModel()
     @Environment(\.presentationMode)private var presentationMode: Binding<PresentationMode>
     @State var win = false
     @State var lose = false
