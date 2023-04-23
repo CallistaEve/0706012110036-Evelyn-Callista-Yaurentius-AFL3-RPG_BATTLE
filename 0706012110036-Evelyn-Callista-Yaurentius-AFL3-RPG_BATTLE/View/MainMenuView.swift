@@ -32,7 +32,7 @@ struct MainMenuView: View {
                 .cornerRadius(5)
             Text("From here, you can...")
             Button{} label: {
-                NavigationLink(destination: CheckStatusView(player: $playerName)) {
+                NavigationLink(destination: CheckStatusView(player: $playerName, playerPotion: $playerPotion, playerElixir: $playerElixir)) {
                     Text("[C]heck Status and Items")
                         .padding(12)
                         .background(Color.green)

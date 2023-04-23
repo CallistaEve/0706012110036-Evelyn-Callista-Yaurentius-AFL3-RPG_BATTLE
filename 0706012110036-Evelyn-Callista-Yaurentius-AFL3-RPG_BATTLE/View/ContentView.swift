@@ -7,39 +7,23 @@
 
 import SwiftUI
 
-struct SampleStyle: ButtonStyle {
-    let imageName: String
-    let title: String
-    func makeBody(configuration: Self.Configuration) -> some View {
-        HStack {
-            Image(systemName: "plus.circle")
-            Text("Add new item")
-        }
-        .padding(12)
-        .background(!configuration.isPressed ?
-                    Color(UIColor.systemIndigo) :
-                        Color(UIColor.systemYellow))
-        .foregroundColor(!configuration.isPressed ? .white : .black)
-        .cornerRadius(8)
-    }
-}
-
 struct ContentView: View {
     var body: some View {
         
         NavigationView {
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
+                Image("RPG")
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 300, height: 300)
+                    .cornerRadius(5)
                 Button {
                     print("Button pressed")
                 } label: {
                     NavigationLink(destination: MainView()) {
                         Text("Start the Game")
                             .padding(12)
-                            .background(Color.green)
+                            .background(Color.black)
                             .foregroundColor(Color.white)
                             .cornerRadius(8)
                     }
@@ -47,6 +31,7 @@ struct ContentView: View {
             }
         }
         .padding()
+        .foregroundColor(Color.black)
     }
 }
 

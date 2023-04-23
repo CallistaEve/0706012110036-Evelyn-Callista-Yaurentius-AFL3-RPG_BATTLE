@@ -11,17 +11,46 @@ struct UseItemView: View {
     @Binding var player : Player
     @Binding var playerPotion : PlayerItem
     @Binding var playerElixir : PlayerItem
-    //    @StateObject var playerItemsvm = PlayerItemViewModel()
+    
     var body: some View {
-        VStack(alignment: .leading){
-            Text("Player HP \(player.playerHp)")
-            Text("Player MP \(player.mp)")
-            Text("Player Potions \(playerPotion.quantity)")
-            Text("Player Elixir \(playerElixir.quantity)")
+        Text("Use Items")
+            .bold()
+
+        HStack(alignment: .top){
+            VStack(alignment: .leading){
+                Image("Wizard")
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 160, height: 155)
+                    .cornerRadius(5)
+                Text("Player Status: ")
+                    .bold()
+                Text("Player Name: \(player.playerName)")
+                Text("Player HP: \(player.playerHp)")
+                Text("Player MP: \(player.mp)")
+                Text("Player Money: \(player.money)\n")
+                Text("Your items:\n")
+                Text("[1].Potion = \(playerPotion.quantity)")
+                Text("[2].Elixir = \(playerElixir.quantity)")
+                Text("\nWhich item do you want to use?")
+            }
+            Spacer()
+            VStack(alignment: .leading){
+                Image("Bag")
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 160, height: 155)
+                    .cornerRadius(5)
+            }
+        }
+        HStack{
             Button {
                 if playerPotion.quantity > 0{
                     playerPotion.quantity -= 1
                     player.playerHp += 50
+                    if player.playerHp > 100{
+                        player.playerHp = 100
+                    }
                 }
             } label: {
                 if playerPotion.quantity > 0{
@@ -43,6 +72,9 @@ struct UseItemView: View {
                 if playerElixir.quantity > 0{
                     playerElixir.quantity -= 1
                     player.mp += 20
+                    if player.mp > 50{
+                        player.mp = 50
+                    }
                 }
             } label: {
                 if playerElixir.quantity > 0{

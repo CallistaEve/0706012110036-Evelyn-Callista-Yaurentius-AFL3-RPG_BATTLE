@@ -13,6 +13,35 @@ struct MarketView: View {
     @Binding var playerElixir : PlayerItem
     @Environment(\.presentationMode)private var presentationMode: Binding<PresentationMode>
     var body: some View {
+        Text("Market")
+            .bold()
+
+        HStack(alignment: .top){
+            VStack(alignment: .leading){
+                Image("Wizard")
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 160, height: 155)
+                    .cornerRadius(5)
+                Text("Player Status: ")
+                    .bold()
+                Text("Player Name: \(player.playerName)")
+                Text("Player HP: \(player.playerHp)")
+                Text("Player MP: \(player.mp)")
+                Text("Player Money: \(player.money)\n")
+                Text("\nYour items:\n")
+                Text("[1].Potion = \(playerPotion.quantity)")
+                Text("[2].Elixir = \(playerElixir.quantity)")
+            }
+            Spacer()
+            VStack(alignment: .leading){
+                Image("Market")
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 160, height: 155)
+                    .cornerRadius(5)
+            }
+        }
         VStack(alignment: .leading){
             Text("Welcome to the Market!\nWhich items do you want to buy?\n\n[P]otions 1x 5$\n[E]lixir 1x 5$\n[L]eave")
             Text("Player Money : \(player.money)")
