@@ -13,72 +13,52 @@ struct MarketView: View {
     @Binding var playerElixir : PlayerItem
     @Environment(\.presentationMode)private var presentationMode: Binding<PresentationMode>
     var body: some View {
-        Text("Market")
-            .bold()
-        
-        ScrollView{
-            HStack(alignment: .top){
-                VStack(alignment: .leading){
-                    Image("Wizard")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 160, height: 155)
-                        .cornerRadius(5)
-                    
-                    Text("Player Status: ")
-                        .bold()
-                    Text("Player Name: \(player.playerName)")
-                    Text("Player HP: \(player.playerHp)")
-                    Text("Player MP: \(player.mp)")
-                    Text("Player Money: \(player.money)\n")
-                    Text("Your items:\n")
-                    Text("[1].Potion = \(playerPotion.quantity)")
-                    Text("[2].Elixir = \(playerElixir.quantity)\n")
-                    Text("Welcome to the Market!\nWhich items do you want to buy?\n\n[P]otions 1x 5$\n[E]lixir 1x 5$\n[L]eave")
+        VStack{
+            Text("Market")
+                .bold()
+            
+            ScrollView{
+                HStack(alignment: .top){
+                    VStack(alignment: .leading){
+                        Image("Wizard")
+                            .renderingMode(.original)
+                            .resizable()
+                            .frame(width: 160, height: 155)
+                            .cornerRadius(5)
+                        
+                        Text("Player Status: ")
+                            .bold()
+                        Text("Player Name: \(player.playerName)")
+                        Text("Player HP: \(player.playerHp)")
+                        Text("Player MP: \(player.mp)")
+                        Text("Player Money: \(player.money)\n")
+                        Text("Your items:\n")
+                        Text("[1].Potion = \(playerPotion.quantity)")
+                        Text("[2].Elixir = \(playerElixir.quantity)\n")
+                        Text("Welcome to the Market!\nWhich items do you want to buy?\n\n[P]otions 1x 5$\n[E]lixir 1x 5$\n[L]eave")
+                    }
+                    Spacer()
+                    VStack(alignment: .leading){
+                        Image("Market")
+                            .renderingMode(.original)
+                            .resizable()
+                            .frame(width: 160, height: 155)
+                            .cornerRadius(5)
+                    }
                 }
-                Spacer()
-                VStack(alignment: .leading){
-                    Image("Market")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 160, height: 155)
-                        .cornerRadius(5)
-                }
-            }
-            Button {
-                if player.money >= 5{
-                    player.money = playerPotion.buy(money: player.money, itemName: "potion")
-                }
-            } label: {
-                if player.money > 0{
-                    Text("Buy Potion")
-                        .padding(12)
-                        .background(Color.green)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(8)
-                }else if player.money <= 0{
-                    Text("You don't have enough money to buy Potion")
-                        .padding(12)
-                        .background(Color.red)
-                        .foregroundColor(Color.black)
-                        .cornerRadius(8)
-                        .disabled(true)
-                }
-            }
-            VStack(alignment: .leading){
                 Button {
                     if player.money >= 5{
-                        player.money = playerElixir.buy(money: player.money, itemName: "elixir")
+                        player.money = playerPotion.buy(money: player.money, itemName: "potion")
                     }
                 } label: {
-                    if player.money >= 5{
-                        Text("Buy Elixir")
+                    if player.money > 0{
+                        Text("Buy Potion")
                             .padding(12)
                             .background(Color.green)
                             .foregroundColor(Color.white)
                             .cornerRadius(8)
                     }else if player.money <= 0{
-                        Text("You don't have enough money to buy Elixir")
+                        Text("You don't have enough money to buy Potion")
                             .padding(12)
                             .background(Color.red)
                             .foregroundColor(Color.black)
@@ -86,23 +66,44 @@ struct MarketView: View {
                             .disabled(true)
                     }
                 }
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Text("Leave")
-                        .padding(12)
-                        .background(Color.red)
-                        .foregroundColor(Color.black)
-                        .cornerRadius(8)
-                })
-                
-                
-                //            Text("Player Money : \(player.money)")
-                //            Text("Player Potions : \(playerPotion.quantity)")
-                //            Text("Player Elixir : \(playerElixir.quantity)")
-                
+                VStack(alignment: .leading){
+                    Button {
+                        if player.money >= 5{
+                            player.money = playerElixir.buy(money: player.money, itemName: "elixir")
+                        }
+                    } label: {
+                        if player.money >= 5{
+                            Text("Buy Elixir")
+                                .padding(12)
+                                .background(Color.green)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(8)
+                        }else if player.money <= 0{
+                            Text("You don't have enough money to buy Elixir")
+                                .padding(12)
+                                .background(Color.red)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(8)
+                                .disabled(true)
+                        }
+                    }
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("Leave")
+                            .padding(12)
+                            .padding(.horizontal, 50)
+                            .background(Color.red)
+                            .cornerRadius(8)
+                    })
+                }
             }
         }
+        .foregroundColor(Color.white)
+        .background(
+            Image("ForestBG")
+                .resizable()
+                .frame(width: 1000, height: 1000))
     }
 }
 

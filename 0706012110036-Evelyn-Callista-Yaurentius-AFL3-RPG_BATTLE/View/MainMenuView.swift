@@ -30,6 +30,7 @@ struct MainMenuView: View {
                 .frame(width: 160, height: 155)
                 .cornerRadius(5)
             Text("From here, you can...")
+                .foregroundColor(Color.white)
             Button{} label: {
                 NavigationLink(destination: CheckStatusView(player: $playerName, playerPotion: $playerPotion, playerElixir: $playerElixir)) {
                     Text("[C]heck Status and Items")
@@ -64,6 +65,7 @@ struct MainMenuView: View {
             }
             
             Text("\nOr choose where you want to go\n")
+                .foregroundColor(Color.white)
             Button {
                 print("Button pressed")
                 
@@ -97,6 +99,12 @@ struct MainMenuView: View {
                     .cornerRadius(8)
             }
         }
+        .foregroundColor(Color.white)
+        .background(
+            Image("ForestBG")
+                .resizable()
+                .frame(width: 1000, height: 1000))
+//        .clipped()
     }
 }
 

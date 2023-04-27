@@ -85,6 +85,10 @@ struct MainView: View {
             }
         }
         .padding()
+        .background(
+            Image("ForestBG")
+                .resizable()
+                .frame(width: 1000, height: 1000))
     }
 }
 
